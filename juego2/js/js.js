@@ -61,5 +61,5 @@ reset.addEventListener("click", () => {
 });
 
 inicio.addEventListener("click", () => {
-  window.location.href = "inicio.html"; // Cambia esto por tu página real
+  window.location.href = ".."; // Cambia esto por tu página real
 });
