@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conversor de Unidades</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>Conversor de Unidades</h1>
+
+<select id="selector">
+  <option value="celsius">Celsius a Fahrenheit</option>
+  <option value="distancia">Kilómetros a Millas</option>
+  <option value="moneda">Euros a Dólares</option>
+</select>
+
+<!-- Conversor de Temperatura -->
+<div class="conversor" id="conversorTemperatura">
+  <input type="number" id="tempInput" placeholder="°C" />
+  <button id="cambiarTemp">↔ Cambiar</button>
+  <button id="convertirTemp">Convertir</button>
+  <div id="resultadoTemp"></div>
+</div>
+
+<!-- Conversor de Distancia -->
+<div class="conversor" id="conversorDistancia" style="display: none;">
+  <input type="number" id="distInput" placeholder="Kilómetros" />
+  <button id="cambiarDist">↔ Cambiar</button>
+  <button id="convertirDist">Convertir</button>
+  <div id="resultadoDist"></div>
+</div>
+
+<!-- Conversor de Moneda -->
+<div class="conversor" id="conversorMoneda" style="display: none;">
+  <input type="number" id="monedaInput" placeholder="Euros" />
+  <button id="cambiarMoneda">↔ Cambiar</button>
+  <button id="convertirMoneda">Convertir</button>
+  <div id="resultadoMoneda"></div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

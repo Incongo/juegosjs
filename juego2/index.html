@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Piedra, Papel o Tijera</h1>
+        <button id="inicio">Inicio</button>
+    </header>
+
+    <main>
+        <div class="marcador">
+            <p>👤 Tú: <span id="puntosJugador">0</span></p>
+            <p>🤖 Máquina: <span id="puntosMaquina">0</span></p>
+        </div>
+
+        <div class="combate">
+            <div class="jugador">
+                <h3>Jugador</h3>
+                <img id="imgJugador" src="css/avatar1.gif" alt="Tu elección" />
+                <p id="textoJugador">Esperando...</p>
+            </div>
+            <div class="maquina">
+                <h3>Máquina</h3>
+                <img id="imgMaquina" src="css/avatar2.gif" alt="Elección máquina" />
+                <p id="textoMaquina">Esperando...</p>
+            </div>
+        </div>
+
+        <div class="opciones">
+            <button class="opcion" data-eleccion="piedra">
+                <img src="css/piedra.webp" alt="Piedra" />
+            </button>
+            <button class="opcion" data-eleccion="papel">
+                <img src="css/papel.png" alt="Papel" />
+            </button>
+            <button class="opcion" data-eleccion="tijera">
+                <img src="css/tijera.png" alt="Tijera" />
+            </button>
+        </div>
+
+        <p id="resultado"></p>
+        <button id="reset">Reiniciar</button>
+    </main>
+
+    <script src="js/js.js"></script>
+</body>
+
+</html>
