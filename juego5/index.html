@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El tablón de Tareas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="main-header">
+  <div class="header-content">
+    
+    <h1 class="titulo">🗂️ El tablón de Tareas</h1>
+    <div class="acciones-header">
+      <label class="switch">
+        <input type="checkbox" id="modoOscuroToggle" />
+        <span class="slider"></span>
+      </label>
+      <img id="imgrana" src="img/rana.gif" alt="Tu elección" />
+      <a href=".." class="volver-btn">← Volver</a>
+    </div>
+  </div>
+</header>
+
+  <section class="formulario">
+    <input type="text" id="tareaTexto" placeholder="Escribe una tarea..." />
+    <select id="etiquetaColor">
+      <option value="rojo">🔴 Urgente</option>
+      <option value="amarillo">🟡 Media</option>
+      <option value="verde">🟢 Baja</option>
+    </select>
+    <button id="agregarTarea">Añadir</button>
+  </section>
+
+  <main class="tablero">
+    <div class="columna" id="pendientes">
+      <h2>Pendientes</h2>
+      <div class="lista-tareas" id="listaPendientes"></div>
+    </div>
+    <div class="columna" id="en-progreso">
+      <h2>En progreso</h2>
+      <div class="lista-tareas" id="listaProgreso"></div>
+    </div>
+    <div class="columna" id="hechas">
+      <h2>Hechas</h2>
+      <div class="lista-tareas" id="listaHechas"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

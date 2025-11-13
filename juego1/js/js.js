@@ -2,13 +2,16 @@ function numeroAleatorioEntre(a, b) {
   return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
-let aleatorio = numeroAleatorioEntre(1, 100); // Entre 1 y 100
-console.log("Número secreto:", aleatorio); // Puedes quitar esto si no quieres mostrarlo
+let aleatorio = numeroAleatorioEntre(1, 100);
+console.log("Número secreto:", aleatorio);
 
 let intentos = 0;
 const maxIntentos = 5;
 
-document.getElementById("numeroenjuego").addEventListener("click", () => {
+const boton = document.getElementById("numeroenjuego");
+const contador = document.getElementById("contador");
+
+boton.addEventListener("click", () => {
   const num = parseInt(document.getElementById("num").value.trim());
   const input = document.getElementById("num");
   const mensaje = document.getElementById("mensaje");
@@ -37,9 +40,12 @@ document.getElementById("numeroenjuego").addEventListener("click", () => {
     mensaje.classList.remove("error");
     input.classList.remove("error");
   }
+
   intentos++;
+  contador.textContent = `Intentos restantes: ${maxIntentos - intentos}`;
+
   if (intentos === maxIntentos && num !== aleatorio) {
-    mensaje.textContent += " Has perdido. El número era " + aleatorio + ".";
+    mensaje.textContent += ` Has perdido. El número era ${aleatorio}.`;
     boton.disabled = true;
     boton.classList.add("bloqueado");
   }
