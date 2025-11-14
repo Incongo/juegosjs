@@ -87,7 +87,7 @@ main{
 }
 
 
-/* Responsive */
+/* Responsive 
 @media (max-width: 500px) {
   .botonera {
     flex-direction: row;
@@ -105,4 +105,4 @@ main{
     font-size: 1.4em;
   }
   
-}
+} */

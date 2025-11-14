@@ -15,7 +15,6 @@ body {
   background: var(--bg);
   color: var(--text);
   text-align: center;
-  padding: 30px;
   margin: 0;
 }
 
@@ -57,12 +56,6 @@ body {
 }
 
 /* CONTENIDO */
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-shadow: 0 0 3px #000;
-}
-
 #inicio {
   background-color: var(--glass);
   padding: 20px;
@@ -91,26 +84,37 @@ h1 {
 
 /* CARD */
 .card {
-  background-color: var(--card-bg);
-  color: var(--card-text);
-  padding: 20px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15); /* efecto vidrio */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text);
+  padding: 25px;
+  border-radius: 16px;
   max-width: 500px;
-  margin: auto;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  animation: saltito 1.5s infinite ease-in-out;
-  border: 2px solid var(--accent);
+  margin: 30px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: fadeUp 0.6s ease-out;
 }
 
-/* Animación tipo saltito */
-@keyframes saltito {
-  0%, 100% {
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Animación de entrada */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-6px);
-  }
 }
+
 
 #pregunta {
   font-size: 1.2em;
@@ -143,38 +147,42 @@ h1 {
   text-shadow: 0 0 3px #000;
 }
 
-/* ANIMACIÓN ENTRADA */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
 /* RESPONSIVE */
-@media (max-width: 764px) {
-  .card {
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .titulo {
+    font-size: 1.4em;
+  }
+
+  .volver-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  #inicio, .card {
     width: 90%;
     padding: 15px;
   }
 
   #opciones button {
-    width: 90%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .titulo {
+    font-size: 1.6em;
   }
 
-  .header-content {
-    font-size: 13px;
-    align-items: flex-start;
-    gap: 10px;
+  #inicio, .card {
+    width: 80%;
   }
 
-  .volver-btn {
-    align-self: flex-end;
-  }
-
-  #quiz {
-    font-size: 20px;
-  }
-
-  h1 {
-    font-size: 1.4em;
+  #opciones button {
+    width: 80%;
   }
 }
